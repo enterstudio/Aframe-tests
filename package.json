@@ -1,0 +1,25 @@
+{
+  "name": "aframe-tests",
+  "version": "0.1",
+  "description": "Selenium and Appium tests for A-Frame",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nhirata/aframe-tests.git"
+  },
+  "keywords": [
+    "appium",
+    "selenium",
+    "aframe",
+    "A-Frame"
+  ],
+  "author": "nhirata",
+  "license": "apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nhirata/aframe-tests/issues"
+  },
+  "homepage": "https://github.com/nhirata/aframe-tests"
+}
