@@ -83,6 +83,7 @@ m in the system variables
 ### Appium :
 * run the appium-doctor app to make sure you have all the tools installed correctly  
 * once you have the emulator, device, etc, up and running and appium started, try running the inspector.  If appium doesn't connect to the inspector and show you things within the inspector, chances are that might be where the break is.
+* make sure that the device name matches whatever device/emulator/simulator you are using
 
 ### windows :
 * make sure you have JAVA_HOME and ANDROID_HOME defined in the system variables.
