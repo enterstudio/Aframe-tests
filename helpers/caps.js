@@ -1,54 +1,35 @@
-exports.ios92 = {
+exports.ios93r = {
   browserName: '',
-  'appium-version': '1.3',
+  'appium-version': '1.5.2',
   platformName: 'iOS',
-  platformVersion: '9.2',
-  deviceName: 'iPhone 5s',
+  platformVersion: '9.3.1',
+  deviceName: 'Naoki Hirata’s iPhone',
   app: undefined // will be set later
 };
 
-exports.ios81 = {
+exports.ios93 = {
   browserName: '',
-  'appium-version': '1.3',
+  'appium-version': '1.5.2',
   platformName: 'iOS',
-  platformVersion: '8.1',
+  platformVersion: '9.3',
   deviceName: 'iPhone Simulator',
   app: undefined // will be set later
 };
 
-exports.ios84 = {
+exports.androidr22 = {
   browserName: '',
-  'appium-version': '1.4.13',
-  platformName: 'iOS',
-  platformVersion: '8.4',
-  deviceName: 'iPhone Simulator',
+  'appium-version': '1.5.2',
+  platformName: 'Android',
+  platformVersion: '5.1',
+  deviceName: 'Galaxy S6',
   app: undefined // will be set later
 };
 
-exports.android18 = {
+exports.androidr23 = {
   browserName: '',
-  'appium-version': '1.3',
+  'appium-version': '1.5.2',
   platformName: 'Android',
-  platformVersion: '4.3',
-  deviceName: 'Android Emulator',
-  app: undefined // will be set later
-};
-
-exports.android19 = {
-  browserName: '',
-  'appium-version': '1.3',
-  platformName: 'Android',
-  platformVersion: '4.4.2',
-  deviceName: 'Android Emulator',
-  app: undefined // will be set later
-};
-
-exports.selendroid16 = {
-  browserName: '',
-  'appium-version': '1.3',
-  platformName: 'Android',
-  platformVersion: '4.1',
-  automationName: 'selendroid',
-  deviceName: 'Android Emulator',
-  app: undefined // will be set later
+  platformVersion: '6.0.1',
+  deviceName: 'Galaxy S6',
+  app: ''
 };
