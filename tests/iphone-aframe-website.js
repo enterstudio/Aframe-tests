@@ -40,57 +40,28 @@ describe("ios safari", function () {
     allPassed = allPassed && this.currentTest.state === 'passed';
   });
 
-  function doesElementExist(driver, element){
-    driver.findElement(webdriver.By.id(element)).then(function(webElement) {
-        console.log(element + ' exists');
-    }, function(err) {
-        if (err.state && err.state == 'no such element') {
-            console.log(element + ' not found');
-        } else {
-            webdriver.promise.rejected(err);
-        }
-    });
-  }
-
   it("should get the url", function () {
     return driver
       .get('https://aframe.io/')
-      .sleep(1000)
-      driver.wait('helloworld')
-      .sleep(1000)
-      .title().should.eventually.include('sauce labs');
+      .waitForElementByPartialLinkText('Hello World', 5000)
+      .title().should.eventually.include('A-Frame');
   });
 
   it("Examples links exists", function () {
     return driver
-      .get('https://aframe.io/')
-      .sleep(1000)
-      doesElementExist(driver, 'helloworld')
-      .sleep(1000)
-      doesElementExist(driver, 'anime-UI')
-      .sleep(1000)
-      doesElementExist(driver, 'composite')
-      .sleep(1000)
-      doesElementExist(driver, 'boilerplate-360video')
-      .sleep(1000)
-      doesElementExist(driver, 'showcase-curved-mockups')
-      .sleep(1000)
-      doesElementExist(driver, 'spheres-and-fog')
-      .sleep(1000)
-      doesElementExist(driver, 'shopping')
-      .sleep(1000)
-      doesElementExist(driver, 'warps')
-      .sleep(1000)
-      doesElementExist(driver, 'generic-logo')
-      .sleep(1000)
-      doesElementExist(driver, 'unfold')
-      .sleep(1000)
-      doesElementExist(driver, 'sky')
-      .sleep(1000)
-      doesElementExist(driver, 'cursor')
-      .sleep(1000)
-      doesElementExist(driver, 'lookat')
-      doesElementExist(driver, 'doesntexist')
+      .hasElementByLinkText('Hello World',5000)
+      .hasElementByLinkText('Anime UI',5000)
+      .hasElementByLinkText('Composite',5000)
+      .hasElementByLinkText('360 Video',5000)
+      .hasElementByLinkText('Curved Mockups',5000)
+      .hasElementByLinkText('Spheres & Fog',5000)
+      .hasElementByLinkText('Shopping',5000)
+      .hasElementByLinkText('Warp',5000)
+      .hasElementByLinkText('Logo',5000)
+      .hasElementByLinkText('Unfold',5000)
+      .hasElementByLinkText('Panorama',5000)
+      .hasElementByLinkText('Cursor & Hover',5000)
+      .hasElementByLinkText('Look At',5000)
   });
 
 
