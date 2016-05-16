@@ -49,6 +49,8 @@ describe("ios safari", function () {
 
   it("Examples links exists", function () {
     return driver
+
+# need to place in for loop after getting elements within subnav group as suggested by mbrandt
       .hasElementByLinkText('Hello World',5000)
       .hasElementByLinkText('Anime UI',5000)
       .hasElementByLinkText('Composite',5000)
