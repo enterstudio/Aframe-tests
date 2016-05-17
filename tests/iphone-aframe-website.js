@@ -40,6 +40,8 @@ describe("ios safari", function () {
     allPassed = allPassed && this.currentTest.state === 'passed';
   });
 
+
+//  ~~~~~~~ Landing Page ~~~~~~~~~
   it("should get the url", function () {
     return driver
       .get('https://aframe.io/')
@@ -47,10 +49,21 @@ describe("ios safari", function () {
       .title().should.eventually.include('A-Frame');
   });
 
-  it("Examples links exists", function () {
-    return driver
 
-# need to place in for loop after getting elements within subnav group as suggested by mbrandt
+
+//  ~~~~~~~ Side bar ~~~~~~~~~~~
+// https://coderwall.com/p/kvzbpa/don-t-use-array-foreach-use-for-instead  
+  it("Examples links exists", function () {
+    var examples = driver.elementsByClassName('subnav examples-subnav borderless-links');
+    console.log (examples);
+    for (var i = 0, len = examples.length; i < len; i++) {
+       console.log (examples[i]);
+       driver.hasElementByLinkText(examples[i],5000);
+    }
+    return driver;
+// loop isn't working quite right, not sure what the problem is yet.
+// console.log doesn't seem to output what I want?
+
       .hasElementByLinkText('Hello World',5000)
       .hasElementByLinkText('Anime UI',5000)
       .hasElementByLinkText('Composite',5000)
@@ -66,6 +79,11 @@ describe("ios safari", function () {
       .hasElementByLinkText('Look At',5000)
   });
 
+// ~~~~~~~ test screenshot ~~~~~~~
+  it("Testing screenshots", function () {
+    return driver
+    .saveScreenshot('./screenshots/')
+  });
 
 });
 

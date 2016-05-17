@@ -30,6 +30,15 @@ exports.androidr23 = {
   'appium-version': '1.5.2',
   platformName: 'Android',
   platformVersion: '6.0.1',
+  deviceName: 'GalaxyS7_ARM',
+  app: ''
+};
+
+exports.androidr23 = {
+  browserName: '',
+  'appium-version': '1.5.2',
+  platformName: 'Android',
+  platformVersion: '6.0.1',
   deviceName: 'Galaxy S6',
   app: ''
 };

@@ -17,7 +17,7 @@ describe("android chrome", function () {
     driver = wd.promiseChainRemote(serverConfig);
     require("../helpers/logging").configure(driver);
 
-    var desired = _.clone(require("../helpers/caps").android23);
+    var desired = _.clone(require("../helpers/caps").androidr23);
     desired.browserName = 'Chrome';
     if (process.env.SAUCE) {
       desired.name = 'android - chrome';
