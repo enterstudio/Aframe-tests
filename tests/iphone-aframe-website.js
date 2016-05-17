@@ -60,24 +60,25 @@ describe("ios safari", function () {
        console.log (examples[i]);
        driver.hasElementByLinkText(examples[i],5000);
     }
-    return driver;
 // loop isn't working quite right, not sure what the problem is yet.
 // console.log doesn't seem to output what I want?
-
-      .hasElementByLinkText('Hello World',5000)
-      .hasElementByLinkText('Anime UI',5000)
-      .hasElementByLinkText('Composite',5000)
-      .hasElementByLinkText('360 Video',5000)
-      .hasElementByLinkText('Curved Mockups',5000)
-      .hasElementByLinkText('Spheres & Fog',5000)
-      .hasElementByLinkText('Shopping',5000)
-      .hasElementByLinkText('Warp',5000)
-      .hasElementByLinkText('Logo',5000)
-      .hasElementByLinkText('Unfold',5000)
-      .hasElementByLinkText('Panorama',5000)
-      .hasElementByLinkText('Cursor & Hover',5000)
-      .hasElementByLinkText('Look At',5000)
-  });
+// need to make sure it's working the way that I want before removing the lines below : 
+      driver.hasElementByLinkText('Hello World',5000)
+      driver.hasElementByLinkText('Anime UI',5000)
+      driver.hasElementByLinkText('Composite',5000)
+      driver.hasElementByLinkText('360 Video',5000)
+      driver.hasElementByLinkText('Curved Mockups',5000)
+      driver.hasElementByLinkText('Spheres & Fog',5000)
+      driver.hasElementByLinkText('Shopping',5000)
+      driver.hasElementByLinkText('Warp',5000)
+      driver.hasElementByLinkText('Logo',5000)
+      driver.hasElementByLinkText('Unfold',5000)
+      driver.hasElementByLinkText('Panorama',5000)
+      driver.hasElementByLinkText('Cursor & Hover',5000)
+      driver.hasElementByLinkText('Look At',5000)
+ 
+    return driver;
+   });
 
 // ~~~~~~~ test screenshot ~~~~~~~
   it("Testing screenshots", function () {
