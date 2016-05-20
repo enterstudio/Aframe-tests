@@ -40,16 +40,21 @@ describe("ios safari", function () {
     allPassed = allPassed && this.currentTest.state === 'passed';
   });
 
+//  ~~~~~~~ Landing Page ~~~~~~~~~
+  it("should get the url", function () {
+    return driver
+      .get('https://toji.github.io/webvr-samples/01-vr-input.html?polyfill=1')
+      .waitForElementById('webgl-canvas', 5000)
+      .title().should.eventually.include('VR Input');
+  });
 
 //  ~~~~~~~ Landing Page ~~~~~~~~~
   it("should get the url", function () {
     return driver
-      .get('https://aframe.io/')
+      .get('https://aframe.io/examples/?polyfill=1')
       .waitForElementByPartialLinkText('Hello World', 5000)
       .title().should.eventually.include('A-Frame');
   });
-
-
 
 //  ~~~~~~~ Side bar ~~~~~~~~~~~
 // https://coderwall.com/p/kvzbpa/don-t-use-array-foreach-use-for-instead  
@@ -60,11 +65,10 @@ describe("ios safari", function () {
     }
    });
 
-  it("Examples links exists", function () {
+  it("Examples are clickable", function () {
     var examples = driver.elementsByClassName('sidebar__link__text')
     for (var i = 0, len = examples.length; i < len; i++) {
-       driver.hasElementByLinkText(examples[i],5000)
-       .click
+       driver.click(driver.hasElementByLinkText(examples[i],5000)).perform()
        .title().should.eventually.include(examples[i])
     }
    return driver;
