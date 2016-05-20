@@ -64,21 +64,24 @@ describe("ios safari", function () {
         .then (function(_els) {
            var els = _els;
            var el = els[0];
+
            return driver.hasElementByLinkText(el,5000);
          })
    });
 
-  it("Examples are clickable", function () {
+   it("Examples are clickable", function () {
+    var el;
     return driver
-       .elementsByClassName('sidebar__link__text')
+      .elementsByClassName('sidebar__link__text')
        .then (function(_els) {
-          var els = _els;
-          var el = els[0];
-          return driver.clickElement(el)
-          .title().should.eventually.include(el.text())
-    })
-   });
-
+         var els = _els;
+         el = els[0];
+         return el.text();
+       }).then((textFromEl) => {
+         return driver.clickElement(el)
+           .title().should.eventually.include(textFromEl)
+       })
+   })
 // ~~~~~~~ test screenshot ~~~~~~~
   it("Testing screenshots", function () {
     return driver

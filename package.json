@@ -16,7 +16,10 @@
     "aframe",
     "A-Frame"
   ],
-  "author": "nhirata",
+  "author": [ 
+    "nhirata",
+    "jlorenzo"
+  ],
   "license": "apache-2.0",
   "bugs": {
     "url": "https://github.com/nhirata/aframe-tests/issues"
