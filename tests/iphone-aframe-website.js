@@ -59,21 +59,23 @@ describe("ios safari", function () {
 //  ~~~~~~~ Side bar ~~~~~~~~~~~
 // https://coderwall.com/p/kvzbpa/don-t-use-array-foreach-use-for-instead  
   it("Examples links exists", function () {
+    var el;
     return driver
         .elementsByClassName('sidebar__link__text')
-        .then (function(_els) {
-           var els = _els;
-           var el = els[0];
-
-           return driver.hasElementByLinkText(el,5000);
-         })
+        .then(function(_els) {
+         var els = _els;
+         el = els[0];
+         return el.text();
+         }).then ((item) => {
+           return driver.hasElementByLinkText(item,5000);
+        });
    });
 
    it("Examples are clickable", function () {
     var el;
     return driver
       .elementsByClassName('sidebar__link__text')
-       .then (function(_els) {
+      .then (function(_els) {
          var els = _els;
          el = els[0];
          return el.text();
