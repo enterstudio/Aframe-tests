@@ -1,5 +1,5 @@
 exports.ios93r = {
-  browserName: '',
+  browserName: 'safari',
   'appium-version': '1.5.2',
   platformName: 'iOS',
   platformVersion: '9.3.1',
@@ -8,7 +8,7 @@ exports.ios93r = {
 };
 
 exports.ios93 = {
-  browserName: '',
+  browserName: 'safari',
   'appium-version': '1.5.2',
   platformName: 'iOS',
   platformVersion: '9.3',
@@ -17,7 +17,7 @@ exports.ios93 = {
 };
 
 exports.androidr22 = {
-  browserName: '',
+  browserName: 'chrome',
   'appium-version': '1.5.2',
   platformName: 'Android',
   platformVersion: '5.1',
@@ -26,7 +26,7 @@ exports.androidr22 = {
 };
 
 exports.androidr23 = {
-  browserName: '',
+  browserName: 'chrome',
   'appium-version': '1.5.2',
   platformName: 'Android',
   platformVersion: '6.0.1',
@@ -34,8 +34,8 @@ exports.androidr23 = {
   app: ''
 };
 
-exports.androidr23 = {
-  browserName: '',
+exports.android23 = {
+  browserName: 'browser',
   'appium-version': '1.5.2',
   platformName: 'Android',
   platformVersion: '6.0.1',

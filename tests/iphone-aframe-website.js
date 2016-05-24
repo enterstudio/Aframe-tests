@@ -78,8 +78,10 @@ describe("ios safari", function () {
       .then (function(_els) {
          var els = _els;
          el = els[0];
+         el = el.shift;
          return el.text();
-       }).then((textFromEl) => {
+       }).then((textFromEl) => { 
+         var el = driver.elementById('exampleNext');
          return driver.clickElement(el)
            .title().should.eventually.include(textFromEl)
        })
