@@ -43,52 +43,30 @@ describe("ios safari", function () {
 //  ~~~~~~~ Landing Page ~~~~~~~~~
   it("should get the url", function () {
     return driver
-      .get('https://toji.github.io/webvr-samples/01-vr-input.html?polyfill=1')
-      .waitForElementById('webgl-canvas', 5000)
-      .title().should.eventually.include('VR Input');
-  });
-
-//  ~~~~~~~ Landing Page ~~~~~~~~~
-  it("should get the url", function () {
-    return driver
       .get('https://aframe.io/examples/?polyfill=1')
       .waitForElementByPartialLinkText('Hello World', 5000)
       .title().should.eventually.include('A-Frame');
   });
 
 //  ~~~~~~~ Side bar ~~~~~~~~~~~
-// https://coderwall.com/p/kvzbpa/don-t-use-array-foreach-use-for-instead  
-  it("Examples links exists", function () {
-    var el;
+  it("Examples are clickable", function() {
     return driver
-        .elementsByClassName('sidebar__link__text')
-        .then(function(_els) {
-         var els = _els;
-         el = els[0];
-         return el.text();
-         }).then ((item) => {
-           return driver.hasElementByLinkText(item,5000);
-        });
-   });
-
-   it("Examples are clickable", function () {
-    var el;
-    return driver
+      .get('https://aframe.io/examples/?polyfill=1')
+      .waitForElementByPartialLinkText('Hello World', 5000)
+      // get each element in the side bar
       .elementsByClassName('sidebar__link__text')
-      .then (function(_els) {
-         var els = _els;
-         el = els[0];
-         return el.text();
-       }).then((textFromEl) => { 
-         return driver.clickElement(el)
-           .title().should.eventually.include(textFromEl)
-       })
-   })
-// ~~~~~~~ test screenshot ~~~~~~~
-  it("Testing screenshots", function () {
-    return driver
-    .saveScreenshot('./screenshots/')
-  });
-
+      .then (function(els) {
+         var actionsForEachElementPromises = els.map(function(el) {
+             return el.text()
+             .then(function (text){
+                 var textCheck = text
+                     return driver.elementById('exampleNext')
+                     .then(function(element){
+                         return driver.clickElement(element).title().should.eventually.include(text);
+                     });
+             });
+         });
+         return Promise.all(actionsForEachElementPromises); // Every action is started here.
+      });
+  })
 });
-

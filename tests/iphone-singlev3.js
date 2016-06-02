@@ -52,15 +52,17 @@ describe("ios safari", function () {
 // https://coderwall.com/p/kvzbpa/don-t-use-array-foreach-use-for-instead  
   it("Examples are clickable", function() {
     return driver.elementsByClassName('sidebar__link__text')
-      .then(function(els) {
-        var actionsForEachElementPromises = els.map(function(element) {
-          return element.text()
-            .then(function(text) {
-            return driver.clickElement(function () {return driver.elementByID('exampleNext')}).title().should.eventually.include(text)
-          });
+      .then (function(els) {
+          var action = els.shift();
+          return action.text();
+      })
+/*      .then(function(text) {
+          return driver.clickElement(function () {
+              return driver.elementByID('exampleNext')
+          }).title().should.eventually.include(text)
         });
+*/
         return Promise.all(actionsForEachElementPromises); // Every action is started here.
-      });
   });
 
 });
